@@ -11,8 +11,10 @@ const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(file
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
   plugins: [react()],
+  base: "/web-analytics-frontend/", // 👈 важно для GH Pages
   server: {
-    port: 5173
+    port: 5173,
+    open: true // 🚀 автоматически открывает браузер
   },
   test: {
     projects: [{

@@ -37,7 +37,8 @@ import { Placeholder } from "./components/Placeholder";
 function App() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
-      <h1 className="text-2xl font-bold">Ore Analytics</h1>
+      <h1 className="text-2xl font-bold">Управление аналитикой данных</h1>
+      <h2 className="text-2xl font-bold">Аналитические дашборды</h2>
       <Placeholder />
     </div>
   );
