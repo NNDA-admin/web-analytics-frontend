@@ -1,3 +1,4 @@
+/*
 /// <reference types="vitest/config" />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
@@ -39,4 +40,29 @@ export default defineConfig({
       }
     }]
   }
+});
+*/
+
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+// ESM способ получить __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Storybook Vitest импорт (ESM)
+import storybookTest from "@storybook/addon-vitest/vitest-plugin";
+import vitestPlugin from "@storybook/addon-vitest/vitest-plugin";
+
+export default defineConfig({
+  base: "/web-analytics-frontend/", // название репозитория
+  plugins: [react()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+    },
+  },
+  server: { port: 5173, open: true },
 });
